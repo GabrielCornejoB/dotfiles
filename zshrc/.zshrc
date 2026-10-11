@@ -1,3 +1,11 @@
+# Load envs 
+if [[ -r "$HOME/.config/shell/envs.zsh" ]]; then
+  source "$HOME/.config/shell/envs.zsh"
+fi
+
+# Forgit commands
+[ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -13,6 +21,7 @@ parse_git_branch() {
 # Enable prompt substitution
 setopt PROMPT_SUBST
 
+# Style
 NEWLINE=$'\n '
 PROMPT=" %F{blue}󰉋  %~%f %F{green}\$(parse_git_branch)${NEWLINE}%F{white}$ "
 
