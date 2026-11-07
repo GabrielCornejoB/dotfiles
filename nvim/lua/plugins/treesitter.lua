@@ -13,7 +13,8 @@ return {
                 "gitignore", "editorconfig",
                 "markdown", "markdown_inline",
                 "dockerfile",
-                "bash", "regex"
+                "bash", "regex",
+                "go"
         }
         require'nvim-treesitter'.install(parsers)
 

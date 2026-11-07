@@ -8,6 +8,8 @@ return {
             },
             automatic_enable = {
                 'lua_ls',
+                'gopls',
+                'vtsls',
             }
         })
     end,
