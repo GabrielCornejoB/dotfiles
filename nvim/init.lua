@@ -31,6 +31,7 @@ require('lazy').setup({
     require 'plugins.noice',
     require 'plugins.trouble',
     require 'plugins.render-markdown',
+    require 'plugins.autopairs',
     { 'neovim/nvim-lspconfig' },
     { 'mfussenegger/nvim-jdtls' },
     { 'github/copilot.vim' },
