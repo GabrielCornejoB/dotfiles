@@ -3,6 +3,9 @@ if [[ -r "$HOME/.config/shell/envs.zsh" ]]; then
   source "$HOME/.config/shell/envs.zsh"
 fi
 
+# Golang tools
+export PATH="$PATH:$(go env GOPATH)/bin"
+
 # Forgit commands
 [ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
 
@@ -26,5 +29,23 @@ NEWLINE=$'\n '
 PROMPT=" %F{blue}󰉋  %~%f %F{green}\$(parse_git_branch)${NEWLINE}%F{white}$ "
 
 # Case-insensitive auto-complete
+autoload -Uz compinit
+compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
+
+# ..<Tab> -> ../ (like PowerShell ..\)
+zstyle ':completion:*' special-dirs true
+setopt AUTO_PARAM_SLASH
+
+# Bare ..<Tab> always appends / (works even in command position)
+dotdot-slash() {
+  if [[ $LBUFFER == *.. && $LBUFFER != *... ]]; then
+    LBUFFER+='/'
+  else
+    zle complete-word
+  fi
+}
+zle -N dotdot-slash
+bindkey '^I' dotdot-slash
+export PATH="$HOME/.local/bin:$PATH"
