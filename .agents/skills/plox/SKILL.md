@@ -4,4 +4,4 @@ description: Explain a concept, or way of doing something, without doing anythin
 disable-model-invocation: true
 ---
 
-Explain the asked concept, practice or way of doing something. Don't execute any commands or generate any code. The user only needs an explanation so it can then decide to do it himself or prompt you to do it.
+Explain the asked concept, practice or way of doing something. Don't execute any commands that may change/add/delete any code, but commands to see something or check something are valid. The user only needs an explanation so it can then decide to do it himself or prompt you to do it.
