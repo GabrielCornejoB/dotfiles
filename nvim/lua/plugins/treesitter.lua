@@ -8,7 +8,7 @@ return {
                 "vim", "vimdoc", "lua",
                 "java", "javadoc", "groovy", "properties",
                 "javascript", "html", "css", "jsdoc",
-                "typescript", "angular", "scss",
+                "typescript", "angular", "scss", "prisma",
                 "json", "yaml", "xml",
                 "gitignore", "editorconfig",
                 "markdown", "markdown_inline",
